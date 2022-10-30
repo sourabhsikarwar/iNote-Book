@@ -13,6 +13,10 @@ const NotesSchema = new mongoose.Schema({
         type : String,
         default : "General"
     },
+    description : {
+        type : String,
+        required : true
+    },
     date : {
         type : Date,
         default : Date.now

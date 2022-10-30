@@ -1,5 +1,6 @@
 const connectToMongo = require('./db')
 const express = require('express')
+const cors = require('cors')
 
 connectToMongo();
 
@@ -7,6 +8,7 @@ const app = express()
 const port = 5000 || process.env.PORT;
 
 app.use(express.json());
+app.use(cors())
 
 // available routes 
 app.use('/api/auth', require('./routes/auth'));
@@ -17,5 +19,5 @@ app.get('/', (req, res) => {
 })
 
 app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`)
+  console.log(`iNotebook Backend listening on port ${port}`)
 })
